@@ -17,3 +17,6 @@ jobs:
 
       - name: Install depedencies
         run: npm i
+
+      - name: Run deploy
+        run: npm run deploy:prod
