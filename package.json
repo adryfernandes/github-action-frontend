@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next export"
+    "build": "rm -rf ./build && next build && next export && mv ./out ./build",
+    "deploy:prod": "npm run build && npx vercel ./build --confirm --no-clipboard --token=$VERCEL_TOKEN --prod"
   },
   "keywords": [],
   "author": "",
@@ -17,5 +17,12 @@
     "next": "^13.5.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "eslint": "8.49.0",
+    "eslint-config-next": "13.5.2",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.3"
   }
 }

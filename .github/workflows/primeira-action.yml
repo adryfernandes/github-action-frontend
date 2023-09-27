@@ -1,9 +1,7 @@
 name: "Integração continua (CI)"
 on:
-  push:
-    branches: ["main"]
-  pull_requests:
-    branches: ["main"]
+  pull_request:
+    types: [opened, synchronize]
 
 jobs:
   exemplo:
